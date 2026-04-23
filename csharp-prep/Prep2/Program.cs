@@ -7,27 +7,30 @@ class Program
         Console.Write("What is your grade percentage? ");
         string userInput = Console.ReadLine();
         float grade = float.Parse(userInput);
+        string letter = "none";
 
         if (grade >= 90)
         {
-            Console.WriteLine("A");
+            letter = "A";
         }
         else if (grade >= 80)
         {
-            Console.WriteLine("B");
+            letter = "B";
         }
         else if (grade >= 70)
         {
-            Console.WriteLine("C");
+            letter = "C";
         }
         else if (grade >= 60)
         {
-            Console.WriteLine("D");
+            letter = "D";
         }
         else
         {
-            Console.WriteLine("F");
+            letter = "F";
         }
+        Console.WriteLine($"{letter}");
+
 
         if (grade >= 70)
         {
