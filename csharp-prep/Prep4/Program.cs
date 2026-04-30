@@ -17,10 +17,19 @@ class Program
             nums.Add(num);
         } while (num != 0);
 
-        for (int i = 0; i < nums.Count; i++)
+        int sum = 0;
+        foreach (int i in nums)
         {
-            Console.WriteLine(nums[i]);
+            sum += i;
         }
+
+        double avg = nums.Where(i => i != 0).Average();
+
+        int max = nums.Max();
+
+        Console.WriteLine($"The sum is: {sum}");
+        Console.WriteLine($"The average is: {avg}");
+        Console.WriteLine($"The largest number is: {max}");
 
     }
 }
