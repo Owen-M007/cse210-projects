@@ -25,22 +25,19 @@ class Program
         Console.Write("Enter your name: ");
         string userName = Console.ReadLine();
         return userName;
-
     }
 
     static int PromptUserNumber()
     {
         Console.Write("Enter your favorite number: ");
-        string favNumber = Console.ReadLine();
-        int favNumberNew = int.Parse(favNumber);
-        return favNumberNew;
+        int favNumber = int.Parse(Console.ReadLine());
+        return favNumber;
     }
 
     static void PromptUserBirthYear(out int birthYear)
     {
         Console.Write("Enter your birth year: ");
-        string birthYearOld = Console.ReadLine();
-        birthYear = int.Parse(birthYearOld);
+        birthYear = int.Parse(Console.ReadLine());
     }
 
     static int SquareNumber(int number)
