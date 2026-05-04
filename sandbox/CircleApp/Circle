@@ -1,0 +1,14 @@
+class Circle
+{
+    double _radius;
+
+    void SetRadius(double radius)
+    {
+        _radius = radius;
+    }
+
+    double GetArea()
+    {
+        return Math.PI * _radius * _radius;
+    }
+}
