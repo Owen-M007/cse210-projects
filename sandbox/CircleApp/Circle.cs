@@ -1,13 +1,13 @@
 class Circle
 {
-    double _radius;
+    public double _radius;
 
-    void SetRadius(double radius)
+    public void SetRadius(double radius)
     {
         _radius = radius;
     }
 
-    double GetArea()
+    public double GetArea()
     {
         return Math.PI * _radius * _radius;
     }
