@@ -1,4 +1,4 @@
-﻿class CircleApplication
+﻿class Program
 {
     public static void Main(string[] args)
     {
