@@ -17,7 +17,7 @@ class JournalEntry
 
         // finish this code - need a random prompt
         _prompt = _prompts[0];
-        Console.WriteLine(_prompt);
+        Console.Write(_prompt);
         _response = Console.ReadLine();
         _prompt = _prompts[0];
     }

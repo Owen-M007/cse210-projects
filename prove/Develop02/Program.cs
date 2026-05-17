@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        Menu myMenu = new Menu();
+        myMenu.DisplayMenu();
+        
         JournalEntry myJournalEntry = new JournalEntry();
         myJournalEntry.CreateJournalEntry();
         // myJournalEntry.DisplayJournalEntry();
@@ -15,9 +18,7 @@ class Program
         Journal myJournal = new Journal();
         myJournal.AddJournalEntry(myJournalEntry);
         myJournal.AddJournalEntry(myJournalEntry2);
-        
         myJournal.DisplayJournal();
-
         
     }
 
