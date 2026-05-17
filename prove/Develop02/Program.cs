@@ -7,9 +7,15 @@ class Program
     {
         // create journal
         Journal myJournal = new Journal();
-        string folder = @"C:\Users\ojmea\OneDrive\Documents";
-        string filename = $"Journal_{DateTime.Now:MMddyyyy}.txt";
+
+        // path for journal file
+        string folder = @"C:\Users\ojmea\OneDrive\Documents\VSCodeFiles\CSE210\cse210-projects\prove\Develop02\Journals";
+        string filename = $"Journal_{DateTime.Now:MM-dd-yyyy}.txt";
         string fullPath = Path.Combine(folder, filename);
+
+        // shorter version of path, purely used as a visual
+        string folderShort = @"CSE210\cse210-projects\prove\Develop02\Journals";
+        string fullPathShort = Path.Combine(folderShort, filename);
 
         // user chooses number and program responds to their choice
         int? choice = null;
@@ -44,7 +50,7 @@ class Program
                 {
                     outputFile.Write(myJournal.CreateFileSystemString_Journal());
                 }
-                Console.WriteLine($"Journal saved to {fullPath}");
+                Console.WriteLine($"Journal saved to {fullPathShort}");
             }
 
             else if (choice == 4)
