@@ -1,19 +1,24 @@
 class Menu
 {
     string _menu;
+    int _choice;
 
     public void DisplayMenu()
     {
-        Console.WriteLine("Welcome to your journal!");
-        Console.WriteLine("1 - Write a new entry");
-        Console.WriteLine("2 - View current journal");
-        Console.WriteLine("3 - Save journal");
-        Console.WriteLine("4 - Load another journal");
-        Console.WriteLine("5 - Quit program");
-        Console.WriteLine("What would you like to do?");
+        // display menu and user gives redirect choice
+        _menu = """
+            Welcome to your journal!
+            1 - Write a new entry
+            2 - View current journal
+            3 - Save journal
+            4 - Load another journal
+            5 - Quit program
+            What would you like to do?
+        """;
+        Console.WriteLine(_menu);
         Console.Write("> ");
         string userInput = Console.ReadLine();
-        int choice = int.Parse(userInput);
+        _choice = int.Parse(userInput);
     }
     
     public void Redirect()
