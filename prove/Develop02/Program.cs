@@ -1,19 +1,20 @@
 using System;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // display menu
-        
-
         // create journal
         Journal myJournal = new Journal();
+        string filename = $"Journal_{DateTime.Now.ToShortDateString()}.txt";
 
         // user chooses number and program responds to their choice
-        int choice = 0;
+        int? choice = null;
+        
         while (choice != 5)
         {
+            // display menu
             Menu myMenu = new Menu();
             myMenu.DisplayMenu();
             choice = myMenu.UserChoice();
@@ -26,26 +27,31 @@ class Program
 
                 // add entry to a journal
                 myJournal.AddJournalEntry(myJournalEntry);
-
-                // return to menu
-                myMenu.DisplayMenu();
             }
 
             else if (choice == 2)
             {
                 // view current journal
                 myJournal.DisplayJournal();
+            }
 
-                // return to menu
-                myMenu.DisplayMenu();
+            else if (choice == 3)
+            {
+                // save journal
+                using (StreamWriter outputFile = new StreamWriter(filename))
+                {
+                    outputFile.Write(myJournal.CreateFileSystemString_Journal());
+                }
+                Console.WriteLine($"Journal saved to {filename}");
+            }
+
+            else if (choice == 4)
+            {
+                // load another journal
             }
         }
-                
 
         // myJournalEntry.DisplayJournalEntry();
         // Console.WriteLine(myJournalEntry.CreateFileSystemString());
-
     }
-
-
 }

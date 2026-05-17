@@ -1,6 +1,6 @@
 class JournalEntry
 {
-    string _date;
+    public string _date;
     string _prompt;
     string _response;
 
@@ -32,7 +32,7 @@ class JournalEntry
         Console.WriteLine($"{_date}, {_prompt}, {_response}");
     }
 
-    public string CreateFileSystemString()
+    public string CreateFileSystemString_Entry()
     {
         return $"{_date}|{_prompt}|{_response}";
     }
