@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        
         // welcome user
         Console.WriteLine("");
         Console.Write("Welcome to your journal!");

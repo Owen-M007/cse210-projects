@@ -15,12 +15,15 @@ class Journal
             journalEntry.DisplayJournalEntry();
         }
     }
-
-    public void CreateFileSystemString_Journal()
+    
+    public string CreateFileSystemString_Journal()
     {
+        List<string> lines = new List<string>();
         foreach (JournalEntry journalEntry in _journalEntries)
         {
-            journalEntry.CreateFileSystemString_Entry();
+            lines.Add(journalEntry.CreateFileSystemString_Entry());
         }
+
+        return string.Join(Environment.NewLine, lines);
     }
 }

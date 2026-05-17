@@ -20,18 +20,24 @@ class JournalEntry
         _date = DateTime.Now.ToShortDateString();
 
         // display random prompt and user gives response
+        Random randomGenerator = new Random();
         int promptChoice = randomGenerator.Next(0,5);
-        while (_usedPrompts.Contains(promptChoice))
-        {
-            promptChoice = randomGenerator.Next(0,5);
-        }
-        _usedPrompts.Add(promptChoice);
         _prompt = _prompts[promptChoice];
-
         Console.WriteLine("");
         Console.WriteLine(_prompt);
+        Console.WriteLine("Type 're' to reroll prompt");
         Console.Write("> ");
         _response = Console.ReadLine();
+        while (_response == "re")
+        {
+            promptChoice = randomGenerator.Next(0,5);
+            _prompt = _prompts[promptChoice];
+            Console.WriteLine("");
+            Console.WriteLine(_prompt);
+            Console.WriteLine("Type 're' to reroll prompt");
+            Console.Write("> ");
+            _response = Console.ReadLine();
+        }
     }
 
     public void DisplayJournalEntry()
