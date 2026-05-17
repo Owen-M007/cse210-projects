@@ -12,8 +12,8 @@ class Menu
         Console.WriteLine("5 - Quit program");
     }
     
-    // public void Redirect()
-    // {
+    public void Redirect()
+    {
         
-    // }
+    }
 }
