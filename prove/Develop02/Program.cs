@@ -65,9 +65,9 @@ class Program
                 Console.WriteLine("");
                 Console.WriteLine("Choose a journal to load (MM-dd-yyyy)");
                 Console.Write("> ");
+                string journalDateChoice = Console.ReadLine();
 
                 // translating input to usable filename
-                string journalDateChoice = Console.ReadLine();
                 string journalCompleteChoice = "Journal_" + journalDateChoice + ".txt";
                 string choicePath = Path.Combine(folder, journalCompleteChoice);
 
@@ -81,7 +81,8 @@ class Program
                     string partsDate = parts[0];
                     string partsPrompt = parts[1];
                     string partsResponse = parts[2];
-                    Console.WriteLine($"{partsDate}, {partsPrompt}, {partsResponse}");
+                    Console.WriteLine($"DATE: {partsDate} - PROMPT: {partsPrompt}");
+                    Console.WriteLine($"{partsResponse}");
                 }
             }
         }

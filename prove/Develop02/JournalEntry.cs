@@ -30,7 +30,8 @@ class JournalEntry
 
     public void DisplayJournalEntry()
     {
-        Console.WriteLine($"{_date}, {_prompt}, {_response}");
+        Console.WriteLine($"DATE: {_date} - PROMPT: {_prompt}");
+        Console.WriteLine($"{_response}");
     }
 
     public string CreateFileSystemString_Entry()
