@@ -7,13 +7,14 @@ class Menu
     {
         // display menu
         _menu = """
-            Welcome to your journal!
-            1 - Write a new entry
-            2 - View current journal
-            3 - Save journal
-            4 - Load another journal
-            5 - Quit program
-            What would you like to do?
+        
+        Welcome to your journal!
+        1 - Write a new entry
+        2 - View current journal
+        3 - Save journal
+        4 - Load another journal
+        5 - Quit program
+        What would you like to do?
         """;
     }
 

@@ -5,16 +5,19 @@ class Program
     static void Main(string[] args)
     {
         // display menu
-        Menu myMenu = new Menu();
-        myMenu.DisplayMenu();
+        
 
         // create journal
         Journal myJournal = new Journal();
 
         // user chooses number and program responds to their choice
-        int choice = myMenu.UserChoice();
+        int choice = 0;
         while (choice != 5)
         {
+            Menu myMenu = new Menu();
+            myMenu.DisplayMenu();
+            choice = myMenu.UserChoice();
+
             if (choice == 1) 
             {
                 // new journal entry

@@ -9,6 +9,7 @@ class Journal
 
     public void DisplayJournal()
     {
+        Console.WriteLine("");
         foreach (JournalEntry journalEntry in _journalEntries)
         {
             journalEntry.DisplayJournalEntry();

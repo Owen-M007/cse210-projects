@@ -7,7 +7,7 @@ class JournalEntry
     string[] _prompts =
     {
         "How are you feeling today?",
-        "Wat was the most interesting interaction you had today?",
+        "What was the most interesting interaction you had today?",
         "What was the best part of your day?",
         "How did you see the hand of the Lord in your life today?",
         "What was the strongest emotion you felt today?",
