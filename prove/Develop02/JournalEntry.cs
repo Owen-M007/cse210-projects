@@ -1,9 +1,9 @@
 class JournalEntry
 {
+    Random randomGenerator = new Random();
     public string _date;
     string _prompt;
     string _response;
-
     string[] _prompts =
     {
         "How are you feeling today?",
@@ -13,15 +13,21 @@ class JournalEntry
         "What was the strongest emotion you felt today?",
         "If you had one thing you could do over today, what would it be?"
     };
+    List<int> _usedPrompts = new List<int>();
     
     public void CreateJournalEntry()
     {
         _date = DateTime.Now.ToShortDateString();
 
         // display random prompt and user gives response
-        Random randomGenerator = new Random();
         int promptChoice = randomGenerator.Next(0,5);
+        while (_usedPrompts.Contains(promptChoice))
+        {
+            promptChoice = randomGenerator.Next(0,5);
+        }
+        _usedPrompts.Add(promptChoice);
         _prompt = _prompts[promptChoice];
+
         Console.WriteLine("");
         Console.WriteLine(_prompt);
         Console.Write("> ");

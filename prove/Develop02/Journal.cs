@@ -16,14 +16,11 @@ class Journal
         }
     }
 
-    public string CreateFileSystemString_Journal()
+    public void CreateFileSystemString_Journal()
     {
-        List<string> lines = new List<string>();
         foreach (JournalEntry journalEntry in _journalEntries)
         {
-            lines.Add(journalEntry.CreateFileSystemString_Entry());
+            journalEntry.CreateFileSystemString_Entry();
         }
-
-        return string.Join(Environment.NewLine, lines);
     }
 }
