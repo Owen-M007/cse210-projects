@@ -7,7 +7,9 @@ class Program
     {
         // create journal
         Journal myJournal = new Journal();
+        string folder = @"C:\Users\ojmea\OneDrive\Documents";
         string filename = $"Journal_{DateTime.Now.ToShortDateString()}.txt";
+        string fullPath = Path.Combine(folder, filename);
 
         // user chooses number and program responds to their choice
         int? choice = null;
