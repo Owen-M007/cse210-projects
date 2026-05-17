@@ -18,11 +18,13 @@ class JournalEntry
     {
         _date = DateTime.Now.ToShortDateString();
 
-        // finish this code - need a random prompt
-        _prompt = _prompts[0];
+        // display random prompt and user gives response
+        Random randomGenerator = new Random();
+        int promptChoice = randomGenerator.Next(0,5);
+        _prompt = _prompts[promptChoice];
         Console.WriteLine(_prompt);
+        Console.Write("> ");
         _response = Console.ReadLine();
-        _prompt = _prompts[0];
     }
 
     public void DisplayJournalEntry()
@@ -32,6 +34,6 @@ class JournalEntry
 
     public string CreateFileSystemString()
     {
-        return $"{_date}#{_prompt}#{_response}";
+        return $"{_date}|{_prompt}|{_response}";
     }
 }
