@@ -8,7 +8,7 @@ class Program
         // create journal
         Journal myJournal = new Journal();
         string folder = @"C:\Users\ojmea\OneDrive\Documents";
-        string filename = $"Journal_{DateTime.Now.ToShortDateString()}.txt";
+        string filename = $"Journal_{DateTime.Now:MMddyyyy}.txt";
         string fullPath = Path.Combine(folder, filename);
 
         // user chooses number and program responds to their choice
@@ -40,11 +40,11 @@ class Program
             else if (choice == 3)
             {
                 // save journal
-                using (StreamWriter outputFile = new StreamWriter(filename))
+                using (StreamWriter outputFile = new StreamWriter(fullPath))
                 {
                     outputFile.Write(myJournal.CreateFileSystemString_Journal());
                 }
-                Console.WriteLine($"Journal saved to {filename}");
+                Console.WriteLine($"Journal saved to {fullPath}");
             }
 
             else if (choice == 4)
