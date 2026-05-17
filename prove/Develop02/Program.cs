@@ -5,6 +5,11 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        // welcome user
+        Console.WriteLine("");
+        Console.Write("Welcome to your journal!");
+
         // create journal
         Journal myJournal = new Journal();
 
@@ -50,16 +55,35 @@ class Program
                 {
                     outputFile.Write(myJournal.CreateFileSystemString_Journal());
                 }
+                Console.WriteLine("");
                 Console.WriteLine($"Journal saved to {fullPathShort}");
             }
 
             else if (choice == 4)
             {
                 // load another journal
+                Console.WriteLine("");
+                Console.WriteLine("Choose a journal to load (MM-dd-yyyy)");
+                Console.Write("> ");
+
+                // translating input to usable filename
+                string journalDateChoice = Console.ReadLine();
+                string journalCompleteChoice = "Journal_" + journalDateChoice + ".txt";
+                string choicePath = Path.Combine(folder, journalCompleteChoice);
+
+                // read and print out loaded journal
+                Console.WriteLine("");
+                Console.WriteLine($"Journal opened '{journalCompleteChoice}'");
+                string[] lines = System.IO.File.ReadAllLines(choicePath);
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split("|");
+                    string partsDate = parts[0];
+                    string partsPrompt = parts[1];
+                    string partsResponse = parts[2];
+                    Console.WriteLine($"{partsDate}, {partsPrompt}, {partsResponse}");
+                }
             }
         }
-
-        // myJournalEntry.DisplayJournalEntry();
-        // Console.WriteLine(myJournalEntry.CreateFileSystemString());
     }
 }

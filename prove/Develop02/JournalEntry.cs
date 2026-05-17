@@ -22,6 +22,7 @@ class JournalEntry
         Random randomGenerator = new Random();
         int promptChoice = randomGenerator.Next(0,5);
         _prompt = _prompts[promptChoice];
+        Console.WriteLine("");
         Console.WriteLine(_prompt);
         Console.Write("> ");
         _response = Console.ReadLine();
