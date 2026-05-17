@@ -5,7 +5,7 @@ class Menu
 
     public void DisplayMenu()
     {
-        // display menu and user gives redirect choice
+        // display menu
         _menu = """
             Welcome to your journal!
             1 - Write a new entry
@@ -15,14 +15,15 @@ class Menu
             5 - Quit program
             What would you like to do?
         """;
+    }
+
+    public int UserChoice()
+    {
+        // returns user-chosen menu item number
         Console.WriteLine(_menu);
         Console.Write("> ");
         string userInput = Console.ReadLine();
         _choice = int.Parse(userInput);
-    }
-    
-    public void Redirect()
-    {
-        
+        return _choice;
     }
 }
