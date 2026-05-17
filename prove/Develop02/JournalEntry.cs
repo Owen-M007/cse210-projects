@@ -11,7 +11,12 @@ class JournalEntry
         "What was the best part of your day?",
         "How did you see the hand of the Lord in your life today?",
         "What was the strongest emotion you felt today?",
-        "If you had one thing you could do over today, what would it be?"
+        "If you had one thing you could do over today, what would it be?",
+        "How satisfied are you with your productivity today?",
+        "How active were you today?",
+        "What was the most enjoyable part of your day?",
+        "What could you do better/differently tomorrow?",
+        "What are you most excited for this week?"
     };
     List<int> _usedPrompts = new List<int>();
     
@@ -21,7 +26,7 @@ class JournalEntry
 
         // display random prompt and user gives response
         Random randomGenerator = new Random();
-        int promptChoice = randomGenerator.Next(0,5);
+        int promptChoice = randomGenerator.Next(0,10);
         _prompt = _prompts[promptChoice];
         Console.WriteLine("");
         Console.WriteLine(_prompt);
@@ -30,7 +35,7 @@ class JournalEntry
         _response = Console.ReadLine();
         while (_response == "re")
         {
-            promptChoice = randomGenerator.Next(0,5);
+            promptChoice = randomGenerator.Next(0,10);
             _prompt = _prompts[promptChoice];
             Console.WriteLine("");
             Console.WriteLine(_prompt);
