@@ -16,7 +16,10 @@ class Program
         //     Console.WriteLine(myWord.GetWordString());
         // }
 
-        Reference myReference = new Reference("1 Nephi", 2, 8);
-        myReference.ShowReference();
+        Reference myReference1 = new Reference("1 Nephi", 2, 8);
+        myReference1.ShowReference();
+
+        Reference myReference2 = new Reference("Moroni", 10, 4, 5);
+        myReference2.ShowReference();
     }
 }

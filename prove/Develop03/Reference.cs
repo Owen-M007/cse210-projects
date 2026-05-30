@@ -50,8 +50,4 @@ class Reference
     {
         Console.WriteLine(GetReferenceString());
     }
-
-    
-
-
 }
