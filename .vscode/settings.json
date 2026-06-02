@@ -4,5 +4,10 @@
     "plaintext": false,
     "markdown": false,
     "csharp": false
-  }
+  },
+  "omnisharp.defaultLaunchSolution": "cse210-student-template.sln",
+  "omnisharp.autoStart": true,
+  "csharp.semanticHighlighting.enabled": true,
+  "debug.internalConsoleOptions": "neverOpen",
+  "workbench.editor.showTabs": "multiple"
 }
