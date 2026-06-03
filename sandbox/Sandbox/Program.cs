@@ -16,12 +16,13 @@ class Program
 
     static void Main(string[] args)
     {
-        DisplayGreeting();
-        
-        double total = AddNumbers(10, 20, 1001.234);
-        Console.WriteLine(total);
-
         Console.WriteLine("Hello Sandbox!");
+        
+        // DisplayGreeting();
+        
+        // double total = AddNumbers(10, 20, 1001.234);
+        // Console.WriteLine(total);
+
 
         // int x = 10;
 
@@ -72,5 +73,7 @@ class Program
         // {
         //     Console.WriteLine(i);
         // }
+
+        
     }
 }
