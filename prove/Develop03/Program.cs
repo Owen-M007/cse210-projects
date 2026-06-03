@@ -31,13 +31,13 @@ class Program
         Console.WriteLine("Welcome to the Scripture Memorizer! (patent pending (totally (for real)))");
         Console.WriteLine("Press Enter to initiate.");
         Console.WriteLine("> ");
-        string userInput = "";
+        string userInput;
         do
         {
             userInput = Console.ReadLine();
             if(userInput != "q")
             {
-            Console.WriteLine("Blah blah blah");
+                
             }
         } while(userInput != "q");
 

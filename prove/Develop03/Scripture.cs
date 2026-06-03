@@ -18,8 +18,9 @@ class Scripture
         
         for(int i = 0; i < 3; i++)
         {
-            int RandomIndex = rand.Next(_words.Count);
+            int randomIndex = rand.Next(_words.Count);
         }
+        
     }
 
     public void ShowScripture()
