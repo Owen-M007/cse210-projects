@@ -23,6 +23,7 @@ class Reference
         _multipleVerse = true;
     }
 
+    // Makes a reference string, and adapts if the reference has multiple verses
     public string GetReferenceString()
     {
         string referenceString;
@@ -39,6 +40,7 @@ class Reference
         return referenceString;
     }
 
+    // writes the reference string to the console
     public void ShowReference()
     {
         Console.WriteLine(GetReferenceString());

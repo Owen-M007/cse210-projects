@@ -1,20 +1,16 @@
-using System;
-using System.Collections.Generic;
-
 class Scripture
 {
     private List<Word> _words = new List<Word>();
-    private Reference _reference;
 
-    public Scripture(Reference Ref, string Text)
+    public Scripture(string Text)
     {
-        _reference = Ref;
         foreach (string word in Text.Split(' '))
         {
             _words.Add(new Word(word));
         }
     }
 
+    // Picks 3 random words from the text
     public List<int> RandomWordPicker(int count = 3)
     {
         List<int> hiddenIndices = new List<int>();
@@ -28,10 +24,10 @@ class Scripture
                 hiddenIndices.Add(randomIndex);
             }
         }
-
         return hiddenIndices;
     }
 
+    // Hides the 3 random words picked
     public void HideRandomWords(int count = 3)
     {
         foreach (int index in RandomWordPicker(count))
@@ -40,6 +36,19 @@ class Scripture
         }
     }
 
+    public bool AllFinished()
+    {
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Writes the scriptures' text to the console
     public void ShowScripture()
     {
         List<string> displayWords = new List<string>();
