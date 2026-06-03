@@ -36,6 +36,7 @@ class Scripture
         }
     }
 
+    // Tells once all words are hidden
     public bool AllFinished()
     {
         foreach (Word word in _words)

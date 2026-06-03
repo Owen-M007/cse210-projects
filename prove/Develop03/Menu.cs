@@ -31,27 +31,27 @@ class Menu
         Reference chosenReference;
         Scripture chosenScripture;
 
-        if(userChoice == "1")
+        if (userChoice == "1")
         {
             chosenReference = _reference1;
             chosenScripture = _scripture1;
         }
-        else if(userChoice == "2")
+        else if (userChoice == "2")
         {
             chosenReference = _reference2;
             chosenScripture = _scripture2;
         }
-        else if(userChoice == "3")
+        else if (userChoice == "3")
         {
             chosenReference = _reference3;
             chosenScripture = _scripture3;
         }
-        else if(userChoice == "4")
+        else if (userChoice == "4")
         {
             chosenReference = _reference4;
             chosenScripture = _scripture4;
         }
-        else if(userChoice == "5")
+        else if (userChoice == "5")
         {
             chosenReference = _reference5;
             chosenScripture = _scripture5;

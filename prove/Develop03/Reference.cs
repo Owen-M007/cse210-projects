@@ -28,7 +28,7 @@ class Reference
     {
         string referenceString;
         
-        if(_multipleVerse == false)
+        if (_multipleVerse == false)
         {
             referenceString = $"{_book} {_chapter}:{_verse}";
         }

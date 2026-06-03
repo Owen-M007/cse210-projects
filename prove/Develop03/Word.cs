@@ -1,4 +1,3 @@
-// Word class contains the word. If the word is hidden, GetWordSTring will return _ characters (one for each character in the word)
 class Word
 {
     private string _word;
@@ -16,7 +15,7 @@ class Word
         string tempWord = "";
         if (_hidden)
         {
-            foreach(char c in _word)
+            foreach (char c in _word)
             {
                 tempWord += '_';
             }
