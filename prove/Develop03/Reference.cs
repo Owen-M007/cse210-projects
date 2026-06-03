@@ -6,28 +6,22 @@ class Reference
     private int _endVerse;
     private bool _multipleVerse;
 
-    public Reference(string Book, int Chapter, int Verse)
+    public Reference(string book, int chapter, int verse)
     {
-        _book = Book;
-        _chapter = Chapter;
-        _verse = Verse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
         _multipleVerse = false;
     }
 
-    public Reference(string Book, int Chapter, int Verse, int EndVerse)
+    public Reference(string book, int chapter, int verse, int endVerse)
     {
-        _book = Book;
-        _chapter = Chapter;
-        _verse = Verse;
-        _endVerse = EndVerse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
         _multipleVerse = true;
     }
-
-    // public string GetReference()
-    // {
-        
-    // }
-
 
     // keeping this public for now, may change to private if I end up using the commented out method above
     public string GetReferenceString()

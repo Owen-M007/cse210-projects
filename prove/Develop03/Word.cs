@@ -4,9 +4,9 @@ class Word
     private string _word;
     private bool _hidden;
 
-    public Word(string Word)
+    public Word(string word)
     {
-        _word = Word;
+        _word = word;
         _hidden = false;
     }
 

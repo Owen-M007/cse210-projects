@@ -1,24 +1,14 @@
 class Scripture
 {
-    private List<String> _words;
+    private List<String> _words = new List<String>();
     private Reference _reference;
-
-    // public Scripture(string Book, int Chapter, int Verse, string Text)
-    // {
-        
-    // }
-
-    // public Scripture(string Book, int Chapter, int Verse, int EndVerse, string Text)
-    // {
-        
-    // }
 
     public Scripture(Reference Ref, string Text)
     {
         _reference = Ref;
-        foreach(string Word in Text.Split(" "))
+        foreach(string word in Text.Split(" "))
         {
-            _words.Add(Word);
+            _words.Add(word);
         }
     }
 
@@ -32,8 +22,8 @@ class Scripture
         }
     }
 
-    // private List<Word> ConvertToWords(string Text)
-    // {
-    //     return Text.Split(' ').ToList();
-    // }
+    public void ShowScripture()
+    {
+        Console.WriteLine($"{_reference.GetReferenceString()}: {string.Join(" ", _words)}");
+    } 
 }
