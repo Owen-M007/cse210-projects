@@ -4,18 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Word myWord = new Word("Hello");
-        // Console.WriteLine(myWord.GetWordString());
-
-        // myWord.Hide();
-        // Console.WriteLine(myWord.GetWordString());
-
-        // myWord.DisplayWord();
-        // if (myWord.IsHidden())
-        // {
-        //     Console.WriteLine(myWord.GetWordString());
-        // }
-
         Reference myReference1 = new Reference("1 Nephi", 3, 7);
         // myReference1.ShowReference();
 
@@ -29,17 +17,23 @@ class Program
         // myScripture2.ShowScripture();
 
         Console.WriteLine("Welcome to the Scripture Memorizer! (patent pending (totally (for real)))");
-        Console.WriteLine("Press Enter to initiate.");
+        Console.WriteLine("Press Enter to hide three words, or type 'q' to quit.");
         Console.WriteLine("> ");
         string userInput;
+
+        myScripture1.ShowScripture();
+
         do
         {
             userInput = Console.ReadLine();
-            if(userInput != "q")
+            if (userInput != "q")
             {
-                
+                myScripture1.HideRandomWords();
+                myScripture1.ShowScripture();
+                Console.WriteLine("Press Enter to hide three more words, or type 'q' to quit.");
+                Console.WriteLine("> ");
             }
-        } while(userInput != "q");
+        } while (userInput != "q");
 
     }
 }
