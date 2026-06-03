@@ -23,7 +23,6 @@ class Reference
         _multipleVerse = true;
     }
 
-    // keeping this public for now, may change to private if I end up using the commented out method above
     public string GetReferenceString()
     {
         string referenceString;

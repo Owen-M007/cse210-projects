@@ -5,7 +5,6 @@ class Scripture
 {
     private List<Word> _words = new List<Word>();
     private Reference _reference;
-    private static readonly Random _rand = new Random();
 
     public Scripture(Reference Ref, string Text)
     {
@@ -19,10 +18,11 @@ class Scripture
     public List<int> RandomWordPicker(int count = 3)
     {
         List<int> hiddenIndices = new List<int>();
+        Random rand = new Random();
 
         while (hiddenIndices.Count < count && hiddenIndices.Count < _words.Count)
         {
-            int randomIndex = _rand.Next(_words.Count);
+            int randomIndex = rand.Next(_words.Count);
             if (!hiddenIndices.Contains(randomIndex))
             {
                 hiddenIndices.Add(randomIndex);
@@ -48,6 +48,6 @@ class Scripture
             displayWords.Add(word.GetWordString());
         }
 
-        Console.WriteLine($"{_reference.GetReferenceString()}: {string.Join(" ", displayWords)}");
+        Console.WriteLine(string.Join(" ", displayWords));
     }
 }

@@ -34,12 +34,6 @@ class Word
         _hidden = true;
     }
 
-    // Check if a word is hidden
-    public bool IsHidden()
-    {
-        return _hidden;
-    }
-
     // display the word, whether unchanged or hidden
     public void DisplayWord()
     {
