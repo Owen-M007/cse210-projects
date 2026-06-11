@@ -24,13 +24,28 @@ class Activity
 
     public void RunCountdown(string message, int duration) // duration here is just for how long we want the thing to pop up on the screen
     {
+        Console.CursorVisible = false;
         Console.Write($"{message}: ");
-        while(duration >= 0)
+        while(duration > 0)
         {
             Console.Write($"{duration--, 2}");
             Thread.Sleep(1000);
             Console.Write("\b\b");
         }
         Console.WriteLine("");
+        Console.CursorVisible = true;
+    }
+
+    public void DisplaySpinner()
+    {
+        int sleepTime = 250;
+
+        string animationString = "/-\\|"; 
+        for (int i = 0; i< 30; i++)
+        {
+            Console.Write(animationString[i % animationString.Length]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+        }
     }
 }
