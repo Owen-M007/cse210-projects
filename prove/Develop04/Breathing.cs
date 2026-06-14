@@ -7,8 +7,12 @@ class Breathing : Activity
     public void RunActivity()
     {
         StartActivity();
-        RunCountdown("Breath in", 4);
-        RunCountdown("Breath out", 6);
+        
+        do
+        {
+            RunCountdown("Breath in", 4);
+            RunCountdown("Breath out", 6);
+        } while(HasTimerExpired() == false);
     }
 
     

@@ -1,15 +1,17 @@
+using System.Diagnostics;
+
 class Activity
 {
     private string _name;
     private string _description;
-    private int _duration; // duration of activity (user input)
+    private int _activityDuration; // duration of activity (user input)
     private DateTime _endTime;
 
     public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = 0;
+        _activityDuration = 0;
         _endTime = DateTime.Now;
     }
 
@@ -17,9 +19,10 @@ class Activity
     {
         Console.WriteLine($"Welcome to the {_name} activity");
         Console.WriteLine(_description);
-        Console.WriteLine("How many seconds for this activity?");
+        Console.WriteLine("How long (in seconds) would you like to do this activity?");
         Console.Write("> ");
-        _duration = int.Parse(Console.ReadLine());
+        _activityDuration = int.Parse(Console.ReadLine());
+        _endTime = DateTime.Now.AddSeconds(_activityDuration);
     }
 
     public void RunCountdown(string message, int duration) // duration here is just for how long we want the thing to pop up on the screen
@@ -30,22 +33,27 @@ class Activity
         {
             Console.Write($"{duration--, 2}");
             Thread.Sleep(1000);
-            Console.Write("\b\b");
+            Console.Write("\b\b  \b\b");
         }
         Console.WriteLine("");
         Console.CursorVisible = true;
     }
 
-    public void DisplaySpinner()
+    public void DisplaySpinner(int duration) // duration here is same as above comment
     {
         int sleepTime = 250;
 
         string animationString = "/-\\|"; 
-        for (int i = 0; i< 30; i++)
+        for(int i = 0; i < duration; i++)
         {
             Console.Write(animationString[i % animationString.Length]);
             Thread.Sleep(sleepTime);
             Console.Write("\b");
         }
+    }
+
+    public bool HasTimerExpired()
+    {
+        return DateTime.Now >= _endTime;
     }
 }
