@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 class Activity
 {
     private string _name;
@@ -17,7 +15,7 @@ class Activity
 
     public void StartActivity()
     {
-        Console.WriteLine($"Welcome to the {_name} activity");
+        Console.WriteLine($"Welcome to the {_name} Activity!");
         Console.WriteLine(_description);
         Console.WriteLine("How long (in seconds) would you like to do this activity?");
         Console.Write("> ");
@@ -25,10 +23,18 @@ class Activity
         _endTime = DateTime.Now.AddSeconds(_activityDuration);
     }
 
+    public void DisplayEnding()
+    {
+        Console.WriteLine("Well done!");
+        DisplaySpinner(15);
+        Console.WriteLine($"You have completed {_activityDuration} seconds of the {_name} Activity.");
+        DisplaySpinner(15);
+    }
+
     public void RunCountdown(string message, int duration) // duration here is just for how long we want the thing to pop up on the screen
     {
         Console.CursorVisible = false;
-        Console.Write($"{message}: ");
+        Console.Write($"{message} ");
         while(duration > 0)
         {
             Console.Write($"{duration--, 2}");
@@ -41,6 +47,7 @@ class Activity
 
     public void DisplaySpinner(int duration) // duration here is same as above comment
     {
+        Console.CursorVisible = false;
         int sleepTime = 250;
 
         string animationString = "/-\\|"; 
@@ -50,6 +57,9 @@ class Activity
             Thread.Sleep(sleepTime);
             Console.Write("\b");
         }
+        Console.Write("\b ");
+        Console.WriteLine("");
+        Console.CursorVisible = true;
     }
 
     public bool HasTimerExpired()

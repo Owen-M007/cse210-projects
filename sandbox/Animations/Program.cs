@@ -17,17 +17,17 @@
         // }
 
 
-        // string animationString = "/-\\|"; 
-        // for (int i = 0; i< 30; i++)
-        // {
-        //     Console.Write(animationString[i % animationString.Length]);
-        //     Thread.Sleep(sleepTime);
-        //     Console.Write("\b");
-        // }
+        string animationString = "/-\\|"; 
+        for (int i = 0; i< 30; i++)
+        {
+            Console.Write(animationString[i % animationString.Length]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+        }
 
 
         int count = 10;
-        int index = 0;
+        // int index = 0;
 
         // DateTime now = DateTime.Now;
         // DateTime endTime = now.AddSeconds(count);

@@ -4,7 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Breathing myBreathingActivity = new Breathing("This will help you breath better");
+        Console.Clear();
+        Breathing myBreathingActivity = new Breathing();
         myBreathingActivity.RunActivity();
+
+        
     }
 }
