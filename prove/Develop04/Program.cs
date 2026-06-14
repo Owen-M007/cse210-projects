@@ -4,10 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
-        Breathing myBreathingActivity = new Breathing();
-        myBreathingActivity.RunActivity();
+        Menu menu1 = new Menu();
+        menu1.DisplayMenu();
 
-        
+
     }
 }
