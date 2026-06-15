@@ -21,6 +21,10 @@ class Activity
         Console.Write("> ");
         _activityDuration = int.Parse(Console.ReadLine());
         _endTime = DateTime.Now.AddSeconds(_activityDuration);
+
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        DisplaySpinner(15);
     }
 
     public void DisplayEnding()
@@ -57,7 +61,7 @@ class Activity
             Thread.Sleep(sleepTime);
             Console.Write("\b");
         }
-        Console.Write("\b ");
+        Console.Write(" ");
         Console.WriteLine("");
         Console.CursorVisible = true;
     }

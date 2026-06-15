@@ -8,14 +8,11 @@ class Breathing : Activity
     {
         StartActivity();
         
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        DisplaySpinner(15);
-        
         do
         {
             RunCountdown("Breathe in...", 4);
             RunCountdown("And breathe out...", 6);
+            Console.WriteLine("");
         } while(HasTimerExpired() == false);
 
         DisplayEnding();
