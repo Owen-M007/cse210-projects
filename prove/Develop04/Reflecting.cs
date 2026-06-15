@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-
 class Reflecting : Activity
 {
     private List<string> _prompts = new List<string> {
@@ -37,7 +35,7 @@ class Reflecting : Activity
         Console.WriteLine("");
         Console.WriteLine($"--- {_prompts[promptChoice]} ---");
         Console.WriteLine("");
-        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.WriteLine("When you have something in mind, press Enter to continue.");
         Console.Write("> ");
 
         ConsoleKey allowedKey = ConsoleKey.Enter;
@@ -65,5 +63,7 @@ class Reflecting : Activity
         } while(HasTimerExpired() == false);
 
         DisplayEnding();
+
+        Console.Clear();
     }
 }

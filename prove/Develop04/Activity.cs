@@ -33,6 +33,11 @@ class Activity
         DisplaySpinner(15);
         Console.WriteLine($"You have completed {_activityDuration} seconds of the {_name} Activity.");
         DisplaySpinner(15);
+
+        Console.WriteLine("");
+        Console.WriteLine("Press Enter to return.");
+        Console.Write("> ");
+        Console.ReadKey(intercept: true);
     }
 
     public void RunCountdown(string message, int duration) // duration here is just for how long we want the thing to pop up on the screen

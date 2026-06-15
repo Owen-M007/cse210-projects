@@ -16,6 +16,8 @@ class Breathing : Activity
         } while(HasTimerExpired() == false);
 
         DisplayEnding();
+
+        Console.Clear();
     }
 
     
