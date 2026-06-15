@@ -7,9 +7,14 @@ class Doctor : Person
         _degree = degree;
     }
 
-    public string GetDoctorInfo()
+    public override string GetPersonInfo()
     {
-        return $"Education: {_degree}, {GetPersonInfo()}";
+        return $"Education: {_degree}, {base.GetPersonInfo()}";
+    }
+
+    public override double GetSalary()
+    {
+        return 350000.00;
     }
 
 }
