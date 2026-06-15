@@ -34,7 +34,6 @@ class Activity
         Console.WriteLine($"You have completed {_activityDuration} seconds of the {_name} Activity.");
         DisplaySpinner(15);
 
-        Console.WriteLine("");
         Console.WriteLine("Press Enter to return.");
         Console.Write("> ");
         Console.ReadKey(intercept: true);
