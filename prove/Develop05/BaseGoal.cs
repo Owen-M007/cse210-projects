@@ -1,4 +1,4 @@
-class BaseGoal
+abstract class BaseGoal
 {
     private string _name;
     private string _description;
@@ -14,28 +14,28 @@ class BaseGoal
         _status = false;
         _goalType = "";
     }
-//set these below as protected later
-    public void SetName()
+
+    protected void SetName()
     {
         Console.Write("what is the name of your goal?: ");
         _name = Console.ReadLine();
     }
 
-    public void SetDescription()
+    protected void SetDescription()
     {
         Console.Write("what is your goal's description?: ");
         _description = Console.ReadLine();
     }
 
-    public void SetNumberOfPoints()
+    protected void SetNumberOfPoints()
     {
         Console.Write("How many points should be earned for this goal? ");
         _numberOfPoints = int.Parse(Console.ReadLine());
     }
-// stop here
+
     public virtual string GetDisplayString()
     {
-        
+        // if this goal is complete, place an X in the status location
         char statusMarker = ' ';
         if (_status)
         {
@@ -49,9 +49,13 @@ class BaseGoal
     return the number of points for completing the goal
     */
 
-    public int MarkComplete()
+    protected int MarkComplete()
     {
         _status = true;
         return _numberOfPoints;
     }
+
+    public abstract void CreateGoal();
+
+    public abstract void RecordEvent();
 }
