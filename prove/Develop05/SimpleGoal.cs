@@ -4,10 +4,13 @@ class SimpleGoal : BaseGoal
     {   
     }
 
-    // public SimpleGoal(string name, string description, int points, bool status) : base()
-    // {
-        
-    // }
+    public SimpleGoal(string name, string description, int points, bool status, string goalType) : base(name, description, points, status)
+    {
+        name = "";
+        description = "";
+        status = false;
+        goalType = "simple";
+    }
 
     public override void CreateGoal()
     {

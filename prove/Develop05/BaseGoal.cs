@@ -15,6 +15,15 @@ abstract class BaseGoal
         _goalType = "";
     }
 
+    public BaseGoal(string name, string description, int points, bool status)
+    {
+        _name = name;
+        _description = description;
+        _numberOfPoints = points;
+        _status = status;
+        _goalType = base.ToString();   // "base.ToString()" gets name of goal type
+    }
+
     protected void SetName()
     {
         Console.Write("what is the name of your goal?: ");
@@ -41,7 +50,12 @@ abstract class BaseGoal
         {
             statusMarker = 'X';
         }
-        return $"[{statusMarker}] Name: {_name}, description: {_description}, points: {_numberOfPoints}";
+        return $" - [{statusMarker}] Name: {_name}, description: {_description}, points: {_numberOfPoints}";
+    }
+
+    public virtual string GetGoalType()
+    {
+        return _goalType;
     }
     
     /*
@@ -55,7 +69,7 @@ abstract class BaseGoal
         return _numberOfPoints;
     }
 
-    public abstract void CreateGoal();
-
     public abstract void RecordEvent();
+
+    public abstract void CreateGoal();
 }

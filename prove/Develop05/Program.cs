@@ -1,5 +1,3 @@
-using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -12,11 +10,16 @@ class Program
         // myBaseG.MarkComplete();
         // Console.WriteLine(myBaseG.GetDisplayString());
 
-        SimpleGoal myGoal = new SimpleGoal();
-        myGoal.CreateGoal();
-        Console.WriteLine(myGoal.GetDisplayString());
 
-        myGoal.RecordEvent();
-        Console.WriteLine(myGoal.GetDisplayString());
+
+        // SimpleGoal myGoal = new SimpleGoal();
+        // myGoal.CreateGoal();
+        // Console.WriteLine(myGoal.GetDisplayString());
+
+        // myGoal.RecordEvent();
+        // Console.WriteLine(myGoal.GetDisplayString());
+
+        Menu menu = new Menu();
+        menu.DisplayMenu();
     }
 }
