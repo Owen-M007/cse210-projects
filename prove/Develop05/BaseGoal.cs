@@ -36,6 +36,12 @@ abstract class BaseGoal
         _description = Console.ReadLine();
     }
 
+    
+    public int GetNumberOfPoints()
+    {
+        return _numberOfPoints;
+    }
+    
     protected void SetNumberOfPoints()
     {
         Console.Write("How many points should be earned for this goal? ");

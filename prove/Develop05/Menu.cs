@@ -12,8 +12,8 @@ class Menu
         while (true)
         {
             Console.Clear();
-            // Goals.DisplayScore();
-            // Console.WriteLine("")
+            _goals.DisplayScore();
+            Console.WriteLine("");
             Console.WriteLine("Menu options:");
             Console.WriteLine("  1. Create new goal");
             Console.WriteLine("  2. List goals");
@@ -62,17 +62,17 @@ class Menu
             Console.Write("> ");
             _userGoalChoice = int.Parse(Console.ReadLine());
             
-            if (_userGoalChoice == 1)
+            if (_userGoalChoice == 1) // Simple goal
             {
-                SimpleGoal simpleGoal = new SimpleGoal();
+                BaseGoal simpleGoal = new SimpleGoal();
                 simpleGoal.CreateGoal();
                 _goals.AddGoal(simpleGoal);
             }
-            // else if (_userGoalChoice == 2)
+            // else if (_userGoalChoice == 2) // Eternal goal
             // {
                 
             // }
-            // else if (_userGoalChoice == 3)
+            // else if (_userGoalChoice == 3) // Checklist goal
             // {
                 
             // }
@@ -96,8 +96,13 @@ class Menu
         else if (_userChoice == 5) // Record event
         {
             _goals.DisplayGoals();
-            Console.WriteLine("Which goal have you accomplished?: ");
+            _goals.RecordEvent();
+
+            Console.Clear();
+            _goals.DisplayGoals();
+            Console.WriteLine("Press enter to return: ");
             Console.Write("> ");
+            Console.ReadKey(intercept: true);
             
         }
     }
