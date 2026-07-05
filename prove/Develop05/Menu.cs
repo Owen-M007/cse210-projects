@@ -68,14 +68,18 @@ class Menu
                 simpleGoal.CreateGoal();
                 _goals.AddGoal(simpleGoal);
             }
-            // else if (_userGoalChoice == 2) // Eternal goal
-            // {
-                
-            // }
-            // else if (_userGoalChoice == 3) // Checklist goal
-            // {
-                
-            // }
+            else if (_userGoalChoice == 2) // Eternal goal
+            {
+                BaseGoal eternalGoal = new EternalGoal();
+                eternalGoal.CreateGoal();
+                _goals.AddGoal(eternalGoal);
+            }
+            else if (_userGoalChoice == 3) // Checklist goal
+            {
+                BaseGoal checklistGoal = new ChecklistGoal();
+                checklistGoal.CreateGoal();
+                _goals.AddGoal(checklistGoal);
+            }
                 
         }
         else if (_userChoice == 2) // List goals

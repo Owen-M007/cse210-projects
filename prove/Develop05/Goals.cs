@@ -2,11 +2,11 @@ class Goals
 {
     private List<BaseGoal> _goals = new List<BaseGoal>();
     private string _filename;
-    private int _totalScore;
-    private int totalPoints = 0;
+    private int _totalPoints;
 
     public Goals()
     {
+        _totalPoints = 0;
     }
 
     public void AddGoal(BaseGoal goal)
@@ -29,7 +29,7 @@ class Goals
 
     public void DisplayScore()
     {
-        Console.WriteLine($"Your total score: {totalPoints}");
+        Console.WriteLine($"Your total score: {_totalPoints}");
     }
 
     public void RecordEvent()
@@ -39,8 +39,6 @@ class Goals
         int userGoalsListChoice = int.Parse(Console.ReadLine());
         _goals[userGoalsListChoice - 1].RecordEvent();
         
-        totalPoints += _goals[userGoalsListChoice - 1].GetNumberOfPoints();
-        
-
+        _totalPoints += _goals[userGoalsListChoice - 1].GetNumberOfPoints();
     }
 }

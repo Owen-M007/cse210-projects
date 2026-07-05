@@ -9,7 +9,6 @@ class SimpleGoal : BaseGoal
         name = "";
         description = "";
         status = false;
-        goalType = "simple";
     }
 
     public override void CreateGoal()
@@ -17,6 +16,7 @@ class SimpleGoal : BaseGoal
         SetName();
         SetDescription();
         SetNumberOfPoints();
+        SetGoalType("simple");
     }
 
     public override void RecordEvent()
