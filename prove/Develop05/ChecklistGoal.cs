@@ -1,3 +1,5 @@
+using System.Drawing;
+
 class ChecklistGoal : BaseGoal
 {
     private int _completions;
@@ -37,13 +39,23 @@ class ChecklistGoal : BaseGoal
         SetGoalType("checklist");
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        if (GetStatus())
+        {
+            return 0;
+        }
+        
         _completions ++;
+        int pointsEarned = GetNumberOfPoints();
+        
         if (_completions == _maxCompletions)
         {
             MarkComplete();
+            pointsEarned += _bonusPoints;
         }
+
+        return pointsEarned;
     }
 
     private void ObtainMaxGoal()

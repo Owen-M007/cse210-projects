@@ -37,8 +37,7 @@ class Goals
         Console.WriteLine("Which goal have you accomplished?: ");
         Console.Write("> ");
         int userGoalsListChoice = int.Parse(Console.ReadLine());
-        _goals[userGoalsListChoice - 1].RecordEvent();
-        
-        _totalPoints += _goals[userGoalsListChoice - 1].GetNumberOfPoints();
+        int pointsEarned = _goals[userGoalsListChoice - 1].RecordEvent();
+        _totalPoints += pointsEarned;
     }
 }

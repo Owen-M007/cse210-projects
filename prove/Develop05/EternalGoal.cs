@@ -27,8 +27,9 @@ class EternalGoal : BaseGoal
         SetGoalType("eternal");
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _completions ++;
+        return GetNumberOfPoints();
     }
 }

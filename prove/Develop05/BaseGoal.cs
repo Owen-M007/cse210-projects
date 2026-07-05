@@ -93,7 +93,7 @@ abstract class BaseGoal
         return _numberOfPoints;
     }
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 
     public abstract void CreateGoal();
 }

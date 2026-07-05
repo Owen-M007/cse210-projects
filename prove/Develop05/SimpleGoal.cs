@@ -19,8 +19,13 @@ class SimpleGoal : BaseGoal
         SetGoalType("simple");
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        if (GetStatus())
+        {
+            return 0;
+        }
         MarkComplete();
+        return GetNumberOfPoints();
     }
 }
