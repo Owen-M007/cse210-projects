@@ -6,9 +6,7 @@ class SimpleGoal : BaseGoal
 
     public SimpleGoal(string name, string description, int points, bool status, string goalType) : base(name, description, points, status)
     {
-        name = "";
-        description = "";
-        status = false;
+        SetGoalType(goalType);
     }
 
     public override void CreateGoal()
@@ -16,7 +14,6 @@ class SimpleGoal : BaseGoal
         SetName();
         SetDescription();
         SetNumberOfPoints();
-        SetGoalType("SimpleGoal");
     }
 
     public override int RecordEvent()

@@ -10,13 +10,12 @@ class ChecklistGoal : BaseGoal
     {   
     }
 
-    public ChecklistGoal(string name, string description, int points, bool status, string goalType, int maxCompletions, int bonusPoints) : base(name, description, points, status)
+    public ChecklistGoal(string name, string description, int points, bool status, string goalType, int completions, int maxCompletions, int bonusPoints) : base(name, description, points, status)
     {
-        name = "";
-        description = "";
-        status = false;
-        maxCompletions = 0;
-        bonusPoints = 0;
+        _completions = completions;
+        _maxCompletions = maxCompletions;
+        _bonusPoints = bonusPoints;
+        SetGoalType(goalType);
     }
 
     public override string GetDisplayString()
@@ -29,6 +28,11 @@ class ChecklistGoal : BaseGoal
         return $" - [{statusMarker}] Type: {GetGoalType()}, Name: {GetName()}, description: {GetDescription()}, Completions: {_completions}/{_maxCompletions}, points: {GetNumberOfPoints()} (completion bonus: {_bonusPoints})";
     }
 
+    public override string GetFileSystemString()
+    {
+        return $"{GetGoalType()}:{GetName()},{GetDescription()},{GetNumberOfPoints()},{GetStatus()},{_completions},{_maxCompletions},{_bonusPoints}";
+    }
+
     public override void CreateGoal()
     {
         SetName();
@@ -36,7 +40,6 @@ class ChecklistGoal : BaseGoal
         ObtainMaxGoal();
         SetNumberOfPoints();
         ObtainBonusPoints();
-        SetGoalType("ChecklistGoal");
     }
 
     public override int RecordEvent()

@@ -8,10 +8,8 @@ class EternalGoal : BaseGoal
 
     public EternalGoal(string name, string description, int points, bool status, string goalType, int completions) : base(name, description, points, status)
     {
-        name = "";
-        description = "";
-        status = false;
-        completions = 0;
+        _completions = completions;
+        SetGoalType(goalType);
     }
 
     public override string GetDisplayString()
@@ -19,12 +17,16 @@ class EternalGoal : BaseGoal
         return $" - [ ] Type: {GetGoalType()}, Name: {GetName()}, description: {GetDescription()}, Completions: {_completions}, points: {GetNumberOfPoints()}";
     }
 
+    public override string GetFileSystemString()
+    {
+        return $"{GetGoalType()}:{GetName()},{GetDescription()},{GetNumberOfPoints()},{GetStatus()},{_completions}";
+    }
+
     public override void CreateGoal()
     {
         SetName();
         SetDescription();
         SetNumberOfPoints();
-        SetGoalType("EternalGoal");
     }
 
     public override int RecordEvent()

@@ -1,2 +1,4 @@
-EternalGoal:buh,guh,10,False
-ChecklistGoal:grrr,brrr,5,False
+85
+SimpleGoal:run,marathon,20,True
+EternalGoal:pray,daily,5,False,2
+ChecklistGoal:assignments,complete 5 assignments,10,True,5,5,5
