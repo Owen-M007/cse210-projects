@@ -7,8 +7,7 @@ class Menu
     private Goals _goals = new Goals();
 
     public void DisplayMenu()
-    {
-        
+    {   
         while (true)
         {
             Console.Clear();
@@ -51,7 +50,7 @@ class Menu
     }
 
     public void Redirector()
-    {
+    {   
         Console.Clear();
         if (_userChoice == 1) // Create new goal
         {
@@ -89,14 +88,14 @@ class Menu
             Console.Write("> ");
             Console.ReadKey(intercept: true);
         }
-        // else if (_userChoice == 3) // Save goals
-        // {
-            
-        // }
-        // else if (_userChoice == 4) // Load goals
-        // {
-            
-        // }
+        else if (_userChoice == 3) // Save goals
+        {
+            _goals.SaveGoals();
+        }
+        else if (_userChoice == 4) // Load goals
+        {
+            _goals.LoadGoals();
+        }
         else if (_userChoice == 5) // Record event
         {
             _goals.DisplayGoals();

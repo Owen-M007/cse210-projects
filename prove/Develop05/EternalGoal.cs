@@ -24,7 +24,7 @@ class EternalGoal : BaseGoal
         SetName();
         SetDescription();
         SetNumberOfPoints();
-        SetGoalType("eternal");
+        SetGoalType("EternalGoal");
     }
 
     public override int RecordEvent()

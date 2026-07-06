@@ -36,7 +36,7 @@ class ChecklistGoal : BaseGoal
         ObtainMaxGoal();
         SetNumberOfPoints();
         ObtainBonusPoints();
-        SetGoalType("checklist");
+        SetGoalType("ChecklistGoal");
     }
 
     public override int RecordEvent()
@@ -60,13 +60,15 @@ class ChecklistGoal : BaseGoal
 
     private void ObtainMaxGoal()
     {
-        Console.Write("how many times do you want to do this goal?: ");
+        Console.WriteLine("how many times do you want to do this goal?: ");
+        Console.Write("> ");
         _maxCompletions = int.Parse(Console.ReadLine());
     }
 
     private void ObtainBonusPoints()
     {
-        Console.Write("how many bonus points would you like for completing this goal?: ");
+        Console.WriteLine("how many bonus points would you like for completing this goal?: ");
+        Console.Write("> ");
         _bonusPoints = int.Parse(Console.ReadLine());
     }
 }

@@ -25,7 +25,8 @@ abstract class BaseGoal
 
     protected void SetName()
     {
-        Console.Write("what is the name of your goal?: ");
+        Console.WriteLine("what is the name of your goal?: ");
+        Console.Write("> ");
         _name = Console.ReadLine();
     }
 
@@ -36,7 +37,8 @@ abstract class BaseGoal
 
     protected void SetDescription()
     {
-        Console.Write("what is your goal's description?: ");
+        Console.WriteLine("what is your goal's description?: ");
+        Console.Write("> ");
         _description = Console.ReadLine();
     }
 
@@ -47,7 +49,8 @@ abstract class BaseGoal
     
     protected void SetNumberOfPoints()
     {
-        Console.Write("How many points should be earned for this goal? ");
+        Console.WriteLine("How many points should be earned for this goal?: ");
+        Console.Write("> ");
         _numberOfPoints = int.Parse(Console.ReadLine());
     }
 
@@ -96,4 +99,9 @@ abstract class BaseGoal
     public abstract int RecordEvent();
 
     public abstract void CreateGoal();
+
+    public virtual string GetFileSystemString()
+    {
+        return $"{_goalType}:{_name},{_description},{_numberOfPoints},{_status}";
+    }
 }

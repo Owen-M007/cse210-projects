@@ -1,0 +1,2 @@
+EternalGoal:buh,guh,10,False
+ChecklistGoal:grrr,brrr,5,False
