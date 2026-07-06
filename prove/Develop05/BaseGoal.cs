@@ -25,7 +25,7 @@ abstract class BaseGoal
 
     protected void SetName()
     {
-        Console.WriteLine("what is the name of your goal?: ");
+        Console.WriteLine("What is the name of your goal?: ");
         Console.Write("> ");
         _name = Console.ReadLine();
     }
@@ -37,7 +37,7 @@ abstract class BaseGoal
 
     protected void SetDescription()
     {
-        Console.WriteLine("what is your goal's description?: ");
+        Console.WriteLine("What is your goal's description?: ");
         Console.Write("> ");
         _description = Console.ReadLine();
     }

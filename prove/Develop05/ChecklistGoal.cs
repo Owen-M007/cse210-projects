@@ -63,14 +63,14 @@ class ChecklistGoal : BaseGoal
 
     private void ObtainMaxGoal()
     {
-        Console.WriteLine("how many times do you want to do this goal?: ");
+        Console.WriteLine("How many times do you want to do this goal?: ");
         Console.Write("> ");
         _maxCompletions = int.Parse(Console.ReadLine());
     }
 
     private void ObtainBonusPoints()
     {
-        Console.WriteLine("how many bonus points would you like for completing this goal?: ");
+        Console.WriteLine("How many bonus points would you like for completing this goal?: ");
         Console.Write("> ");
         _bonusPoints = int.Parse(Console.ReadLine());
     }

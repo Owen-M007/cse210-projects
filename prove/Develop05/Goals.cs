@@ -3,7 +3,9 @@ class Goals
     private List<BaseGoal> _goals = new List<BaseGoal>();
     private int _totalPoints;
     private string _folder = @"C:\Users\ojmea\OneDrive\Documents\VSCodeFiles\CSE210\cse210-projects\prove\Develop05\GoalFolder";
-    private string _filename = $"Goals_{DateTime.Now:MM-dd-yyyy}.txt";
+    private string _filename;
+
+    private Animation _animations = new Animation();
 
     public Goals()
     {
@@ -44,6 +46,18 @@ class Goals
 
     public void SaveGoals()
     {
+        Console.Clear();
+        Console.WriteLine("What would you like to name your goals file?: ");
+        Console.Write("> ");
+        _filename = Console.ReadLine() + ".txt";
+
+        Console.CursorVisible = false;
+        Console.WriteLine("");
+        Console.WriteLine($"Saved to file as '{_filename}' ");
+        
+        _animations.DisplaySpinner();
+        Console.CursorVisible = true;
+
         string fullPath = Path.Combine(_folder, _filename);
 
         using (StreamWriter outputFile = new StreamWriter(fullPath))
@@ -61,26 +75,28 @@ class Goals
     {
         Console.Clear();
         _goals.Clear();
-        // _totalPoints = 0;
-        Console.WriteLine("Choose a goal folder to load (MM-dd-yyyy):");
+        Console.WriteLine("Choose a goals file to load:");
         Console.Write("> ");
-        string goalsDateChoice = Console.ReadLine();
+        string fileChoice = Console.ReadLine() + ".txt";
 
-        // change out date for instead allowing user to put in any filename
-        string goalsCompleteChoice = "Goals_" + goalsDateChoice + ".txt";
-        string choicePath = Path.Combine(_folder, goalsCompleteChoice);
+        string pathChoice = Path.Combine(_folder, fileChoice);
 
-        // Console.WriteLine("");
-        // Console.WriteLine($"Folder opened '{goalsCompleteChoice}'");
+        Console.CursorVisible = false;
+        Console.WriteLine("");
+        Console.WriteLine($"File opened '{fileChoice}' ");
 
-        string[] lines = System.IO.File.ReadAllLines(choicePath);
+
+        _animations.DisplaySpinner();
+        Console.CursorVisible = true;
+
+        string[] lines = System.IO.File.ReadAllLines(pathChoice);
         CreateGoals(lines);
     }
 
     public void CreateGoals(string[] lines)
     {
         _totalPoints = int.Parse(lines[0]);
-        
+
         for (int i = 1; i <= lines.Length - 1; i++)
         {
             string line = lines[i];

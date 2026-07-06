@@ -6,6 +6,8 @@ class Menu
 
     private Goals _goals = new Goals();
 
+    private Animation _animations = new Animation();
+
     public void DisplayMenu()
     {   
         while (true)
@@ -25,24 +27,16 @@ class Menu
             
             if (_userChoice == 6)
             {   
-                // Console.CursorVisible = false;
+                Console.Clear();
 
-                // Console.Clear();
+                Console.CursorVisible = false;
 
-                // Console.WriteLine("Goodbye!");
-                // Console.WriteLine("");
-
-                // for(int i = 0; i < 5; i++)
-                // {
-                //     Console.Write(":)");
-                //     Thread.Sleep(500);
-                //     Console.Write("\b\b  \b\b");
-                //     Console.Write(":D");
-                //     Thread.Sleep(500);
-                //     Console.Write("\b\b  \b\b");
-                // }
+                Console.WriteLine("Goodbye! ");
+                
+                _animations.DisplaySpinner();
 
                 Console.Clear();
+
                 break;
             }
             Redirector();
@@ -105,11 +99,17 @@ class Menu
             _goals.RecordEvent();
 
             Console.Clear();
+            Console.CursorVisible = false;
+            
+            _animations.DisplayCompletion();
+
+            Console.Clear();
+            Console.CursorVisible = true;
+
             _goals.DisplayGoals();
             Console.WriteLine("Press enter to return: ");
             Console.Write("> ");
             Console.ReadKey(intercept: true);
-            
         }
     }
 }
