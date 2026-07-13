@@ -5,16 +5,31 @@ class Address
     private string _stateOrProvince;
     private string _country;
 
-    public Address(string street, string city, string stateOrProvince, string country)
+    public Address()
     {
-        _street = street;
-        _city = city;
-        _stateOrProvince = stateOrProvince;
-        _country = country;
     }
 
+    public void SetStreet(string street)
+    {
+        _street = street;
+    }
+
+    public void SetCity(string city)
+    {
+        _city = city;
+    }
+
+    public void SetStateOrProvince(string stateOrProvince)
+    {
+        _stateOrProvince = stateOrProvince;
+    }
+
+    public void SetCountry(string country)
+    {
+        _country = country;
+    }
     
-    public string GetFullAddress()
+    public string FullAddress()
     {
         return $"""
         {_street}
