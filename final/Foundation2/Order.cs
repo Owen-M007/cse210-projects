@@ -14,14 +14,14 @@ class Order
         _products.Add(product);
     }
 
-    public int CalculateOrderTotal()
+    public double CalculateOrderTotal()
     {
-        int subTotal = 0;
+        double subTotal = 0;
         foreach (Product product in _products)
         {
             subTotal += product.GetTotalPrice();
         }
-        int total = subTotal + CalculateShippingCost();
+        double total = subTotal + CalculateShippingCost();
         return total;
     }
 
@@ -40,7 +40,7 @@ class Order
         Console.WriteLine("| Packing Label |");
         foreach (Product product in _products)
         {
-            Console.WriteLine($"> {product.GetName()} (ID: {product.GetID()})");
+            Console.WriteLine($"> ({product.GetQuantity()}) {product.GetName()} (ID: {product.GetID()})");
         }
         Console.WriteLine("");
     }
@@ -56,7 +56,7 @@ class Order
 
     public void DisplayOrderPrice()
     {
-        Console.WriteLine($"Order total: ${CalculateOrderTotal()}");
+        Console.WriteLine($"Order total: ${CalculateOrderTotal():F2}");
         Console.WriteLine("");
     }
 }

@@ -37,7 +37,7 @@ class Customer
     //     Console.WriteLine($"Name: {_name}");
     //     Console.WriteLine("Address:");
     //     Console.WriteLine();
-    //     Console.WriteLine($"Lives in the USA?: {_address.IsUSA()}"); // this will be removed when all is finished
+    //     Console.WriteLine($"Lives in the USA?: {_address.IsUSA()}");
     //     Console.WriteLine("");
     // }
 }
