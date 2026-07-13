@@ -1,16 +1,15 @@
 class Product
 {
     private string _name;
-    private int _ID;
+    private string _ID;
     private int _pricePerUnit;
     private int _quantity;
 
-    public Product(string name, int ID, int pricePerUnit, int quantity)
+    public Product(string name, string ID, int pricePerUnit)
     {
         _name = name;
         _ID = ID;
         _pricePerUnit = pricePerUnit;
-        _quantity = quantity;
     }
 
     public int GetTotalPrice()
@@ -23,7 +22,7 @@ class Product
        return _name; 
     }
 
-    public int GetID()
+    public string GetID()
     {
         return _ID;
     }
@@ -36,5 +35,10 @@ class Product
     public int GetQuantity()
     {
         return _quantity;
+    }
+
+    public void SetQuantity(int quantity)
+    {
+        _quantity = quantity;
     }
 }
