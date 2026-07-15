@@ -1,6 +1,6 @@
 class Swimming : Activity
 {
-    private int _laps;
+    private double _laps;
 
     public Swimming(string date, int time, int laps) : base(date, time)
     {
@@ -9,9 +9,21 @@ class Swimming : Activity
 
     public override double GetDistance()
     {
-        double distance = _laps * 50 / 1000;
-        return distance;
+        return _laps * 50 / 1000;
     }
 
-    
+    public override double GetSpeed()
+    {
+        return GetDistance() / GetTime() * 60;
+    }
+
+    public override double GetPace()
+    {
+        return 60 / GetSpeed();
+    }
+
+    public override string GetSummary()
+    {
+        return $"{base.GetSummary()} Laps: {_laps}, Distance {GetDistance():F1} km, Speed {GetSpeed():F1} kph, Pace: {GetPace():F1} min per km";
+    }
 }

@@ -1,48 +1,32 @@
-class Activity
+abstract class Activity
 {
     private string _date;
-    private int _time; // minutes
-    private double _distance; // kilometres
-    private double _speed; // kilometres per hour
-    private double _pace; // minutes per kilometre
+    private int _time; // in minutes
 
     public Activity(string date, int time)
     {
         _date = date;
         _time = time;
     }
-    public virtual void SetDistance(double distance)
+
+    public string GetDate()
     {
-        _distance = distance;
+        return _date;
     }
 
-    public virtual void SetSpeed()
+    public int GetTime()
     {
-        _speed = _distance / _time * 60;
+        return _time;
     }
 
-    public virtual void SetPace()
-    {
-        _pace = _time / _distance;
-    }
+    public abstract double GetDistance();
 
-    public virtual double GetDistance()
-    {
-        return _distance;
-    }
+    public abstract double GetSpeed();
 
-    public virtual double GetSpeed()
-    {
-        return _speed;
-    }
+    public abstract double GetPace();
 
-    public virtual double GetPace()
+    public virtual string GetSummary()
     {
-        return _pace;
-    }
-
-    public virtual void GetSummary()
-    {
-        Console.WriteLine($"{_date} {ToString()} ({_time} min) - Distance {_distance} km, Speed {_speed} kph, Pace: {_pace} min per km");
+        return $"{_date} {ToString()} ({_time} min) -";
     }
 }
