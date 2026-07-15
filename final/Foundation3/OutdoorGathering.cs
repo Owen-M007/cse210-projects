@@ -11,7 +11,8 @@ class OutdoorGathering : Event
     {
         StandardDetails();
         Console.WriteLine($"""
-        Type: {ToString()}
+        Type: outdoor gathering
+        Capacity: come one, come all!
         Weather: {_weather}
         """);
     }

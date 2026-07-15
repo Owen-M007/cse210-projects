@@ -13,9 +13,9 @@ class Lecture : Event
     {
         StandardDetails();
         Console.WriteLine($"""
-        Type: {ToString()}
+        Type: lecture
+        Capacity: {_capacity} people
         Speaker: {_speaker}
-        Cpaacity: {_capacity} people
         """);
     }
 
