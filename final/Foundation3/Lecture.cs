@@ -22,7 +22,7 @@ class Lecture : Event
     public override void ShortDetails() // type of event, title, and date
     {
         Console.WriteLine($"""
-        Type: {ToString()}
+        Type: lecture
         """); 
         base.ShortDetails();
     }

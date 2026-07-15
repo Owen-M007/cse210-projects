@@ -29,7 +29,7 @@ class Event
         Title: {_title}
         Description: {_description}
         Date: {_date}
-        time: {_time}
+        Time: {_time}
         Address: {_address.FullAddress()}
         """);
     }
