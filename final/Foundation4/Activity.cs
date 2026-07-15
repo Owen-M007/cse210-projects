@@ -6,13 +6,24 @@ class Activity
     private double _speed; // kilometres per hour
     private double _pace; // minutes per kilometre
 
-    public Activity(string date, int time, double distance, double speed, double pace)
+    public Activity(string date, int time)
     {
         _date = date;
         _time = time;
+    }
+    public virtual void SetDistance(double distance)
+    {
         _distance = distance;
-        _speed = speed;
-        _pace = pace;
+    }
+
+    public virtual void SetSpeed()
+    {
+        _speed = _distance / _time * 60;
+    }
+
+    public virtual void SetPace()
+    {
+        _pace = _time / _distance;
     }
 
     public virtual double GetDistance()
